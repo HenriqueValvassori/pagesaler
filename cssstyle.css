@@ -21,6 +21,22 @@ h1, h2, h3, h4, h5, h6 {
     color: #00FF00;
     text-align: center;
 }
+#red{
+    color: red;
+    font-weight: 900;
+    font-size: larger;
+    font-style: oblique;
+    font-family: Arial, sans-serif;
+ text-shadow: 
+    0 0 7px #ffffff,
+    0 0 10px #ffffff,
+    0 0 21px #ffffff,
+    0 0 42px rgb(255, 0, 0),
+    0 0 82px rgb(255, 0, 0),
+    0 0 92px rgb(255, 0, 0),
+    0 0 102px rgb(255, 0, 0),
+    0 0 151px rgb(255, 0, 0);
+}
 
 .hero__caption {
     text-align: center;
@@ -32,7 +48,7 @@ h1, h2, h3, h4, h5, h6 {
 */
 
 .btn, .radius-btn {
-    background-color: #333333;
+    background-color: #ff0000;
     color: #00FF00;
     border: 1px solid #00FF00;
     padding: 10px 20px;
@@ -83,7 +99,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .say-btn .btn {
-    background-color: #000000;
+    background-color: #ff00002a;
     color: #00FF00;
     border: 2px solid #00FF00;
     text-transform: uppercase;
@@ -162,7 +178,7 @@ video {
     display: block;
     max-width: 100%;
     height: auto;
-    border: 2px solid #00FF00;
+    border: 10px solid #00FF00;
 }
 
 .best-features-area .container {
