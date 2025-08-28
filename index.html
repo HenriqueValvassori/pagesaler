@@ -92,18 +92,31 @@
                             </div>
                         </div><br>
                         <div class="row">
-                            <div class="col-xl-6 col-lg-6 col-md-6">
+                            <div id="myVideo" class="col-xl-6 col-lg-6 col-md-6">
                                 <div class="single-features mb-70">
                                    
                                     
                                     <div class="features-caption">
-                                <center>  <video id="myVideo" height="10" width="54%" class="block" controls><source  src="Vídeo sem título ‐ Feito com o Clipchamp (42) (1) (1).mp4" type="video/mp4" ></video></center>
-                                  
+                                        <div class="video-container">
+    <img height="540" width="100%" style="height: 540; width: 100%; border: 5px solid rgb(0, 255, 0);" src="assets/img/esseimg.png" alt="Miniatura do Vídeo">
+    <div class="video-embed" style="display: none;">
+                                <center><iframe
+  src="https://player.cloudinary.com/embed/?cloud_name=djk6ikt3m&public_id=V%C3%ADdeo_sem_t%C3%ADtulo_Feito_com_o_Clipchamp_42_1_1_1_p2xxik&profile=cld-default"
+  height="540" width="360"
+  style="height: 540; width: 100%; aspect-ratio: 640 / 360; border: 5px solid rgb(72, 255, 0);"
+  allow="autoplay; fullscreen; encrypted-media; picture-in-picture"
+  allowfullscreen
+  frameborder="0"
+  
+></iframe></center>
+                         </div></div>         
                     </div></center>
                 </div>    
              </div>
             </div></center>
         </section>
+
+
                 <div class="single-slider slider-height slider-padding sky-blue d-flex align-items-center">
                     <div class="container">
                         <div class="row d-flex align-items-center">
@@ -295,6 +308,30 @@ document.addEventListener('DOMContentLoaded', (event) => {
         });
         console.log("Slick initialized!");
     });
+</script>
+<script>document.querySelector('.video-container').addEventListener('click', function() {
+    const videoEmbed = this.querySelector('.video-embed');
+    const thumbnail = this.querySelector('img');
+
+    if (videoEmbed && thumbnail) {
+        thumbnail.style.display = 'none';
+        videoEmbed.style.display = 'block';
+
+        // Encontre o iframe dentro do div 'video-embed'
+        const videoIframe = videoEmbed.querySelector('iframe');
+        
+        // Verifique se o iframe existe e adicione o autoplay
+        if (videoIframe) {
+            // Recria a URL com o parâmetro 'autoplay=1'
+            let src = videoIframe.src;
+            if (src.indexOf('?') !== -1) {
+                videoIframe.src = src + '&autoplay=1';
+            } else {
+                videoIframe.src = src + '?autoplay=1';
+            }
+        }
+    }
+});
 </script>
 </body>
 </html>
