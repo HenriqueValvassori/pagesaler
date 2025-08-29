@@ -1,107 +1,128 @@
 /*
-  ==============================================
-  Estilos CSS para a página "Curso Fatura Aí"
-  ==============================================
+==============================================
+Estilos CSS para a página "Curso Revolução Digital"
+- Otimização e Responsividade
+- Baseado no tema "Matrix" (preto e verde neon)
+==============================================
 */
+
+/* Variáveis CSS para cores - Clean Code */
+:root {
+    --neon-green: #00FF00;
+    --dark-green: #33FF33;
+    --black: #000000;
+    --dark-gray: #1a1a1a;
+    --red-alert: #ff0000;
+    --shadow-light: rgba(255, 255, 255, 0.7);
+    --shadow-neon-green: rgba(0, 255, 0, 0.2);
+}
 
 /* Estilos gerais da página */
 body {
-    background-color: #000000;
-    color: #00FF00;
-    font-family: Arial, sans-serif;
+    background-color: var(--black);
+    color: var(--neon-green);
+    font-family: 'Arial', sans-serif;
     line-height: 1.6;
+    margin: 0; /* Remove margem padrão do body */
+    padding: 0; /* Remove padding padrão do body */
+    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
 }
 
 /* ==============================================
-  Estilos para textos e títulos
-  ==============================================
+Estilos para textos e títulos
+==============================================
 */
 
 h1, h2, h3, h4, h5, h6 {
-    color: #00FF00;
+    color: var(--neon-green);
     text-align: center;
+    margin-bottom: 1rem; /* Espaçamento padrão para títulos */
 }
-#red{
-    color: red;
+
+#red {
+    color: var(--red-alert);
     font-weight: 900;
-    font-size: larger;
+    font-size: clamp(1.5rem, 4vw, 3rem); /* Tamanho responsivo da fonte */
     font-style: oblique;
-    font-family: Arial, sans-serif;
- text-shadow: 
-    0 0 7px #ffffff,
-    0 0 10px #ffffff,
-    0 0 21px #ffffff,
-    0 0 42px rgb(255, 255, 255),
-    0 0 82px rgb(255, 255, 255),
-    0 0 92px rgb(255, 255, 255),
-    0 0 102px rgb(255, 255, 255),
-    0 0 151px rgb(255, 255, 255);
+    font-family: 'Arial', sans-serif;
+    text-shadow:
+        0 0 7px var(--shadow-light),
+        0 0 10px var(--shadow-light),
+        0 0 21px var(--shadow-light),
+        0 0 42px var(--shadow-light),
+        0 0 82px var(--shadow-light),
+        0 0 92px var(--shadow-light),
+        0 0 102px var(--shadow-light),
+        0 0 151px var(--shadow-light);
+    white-space: normal; /* Permite que o texto quebre linhas */
+    word-break: break-word; /* Garante que palavras longas quebrem */
 }
 
 .hero__caption {
     text-align: center;
+    padding: 2rem 1rem; /* Padding para espaçamento interno */
+}
+
+.hero__caption p {
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Tamanho responsivo do parágrafo */
 }
 
 /* ==============================================
-  Estilos para botões e links
-  ==============================================
+Estilos para botões e links
+==============================================
 */
 
 .btn, .radius-btn {
-    background-color: #ff0000;
-    color: #00FF00;
-    border: 1px solid #00FF00;
-    padding: 10px 20px;
+    background-color: rgba(255, 0, 0, 0.8); /* Cor mais transparente */
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 12px 25px; /* Ajuste no padding */
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+    display: inline-block; /* Garante que o padding e a margem funcionem */
+    margin-top: 20px;
+    font-weight: bold;
+    text-transform: uppercase;
+    letter-spacing: 1px;
 }
 
 .btn:hover, .radius-btn:hover {
-    background-color: #00FF00;
-    color: #000000;
-}
-
-.slider-btns .radius-btn {
-    display: inline-block;
-    margin-top: 20px;
+    background-color: var(--neon-green);
+    color: var(--black);
+    border-color: var(--dark-green);
+    box-shadow: 0 0 10px var(--neon-green); /* Adiciona um brilho no hover */
 }
 
 /* ==============================================
-  Estilos para a Seção "Fale Conosco" (Otimizado)
-  ==============================================
+Estilos para a Seção "Fale Conosco"
+==============================================
 */
 .say-something-aera {
-    background-color: #000000;
+    background-color: var(--black);
     position: relative;
-    z-index: 1; /* Garante que a seção fique acima de outros elementos */
+    z-index: 1;
     overflow: hidden;
-    padding: 150px 0; /* Aumenta o espaçamento para esticar a seção */
+    padding: 100px 0; /* Padding responsivo */
     text-align: center;
 }
 
 .say-something-aera .container {
     position: relative;
-    z-index: 2; /* Move o conteúdo para a camada de cima */
+    z-index: 2;
 }
 
-/* Título */
 .say-something-aera h2 {
-    color: #00FF00;
-    font-size: 2.5rem;
+    color: var(--neon-green);
+    font-size: clamp(2rem, 5vw, 3rem); /* Tamanho responsivo da fonte */
     line-height: 1.2;
-    margin-bottom: 20px;
-}
-
-/* Botão "Fale Conosco" */
-.say-btn {
-    text-align: center;
+    margin-bottom: 30px;
 }
 
 .say-btn .btn {
-    background-color: #ff00002a;
-    color: #00FF00;
-    border: 2px solid #00FF00;
+    background-color: rgba(255, 0, 0, 0.16); /* Ajustado para mais transparência */
+    color: var(--neon-green);
+    border: 2px solid var(--neon-green);
     text-transform: uppercase;
     font-weight: bold;
     padding: 15px 30px;
@@ -111,24 +132,24 @@ h1, h2, h3, h4, h5, h6 {
 
 .say-btn .btn:hover,
 .say-btn .btn:focus {
-    background-color: #00FF00;
-    color: #000000;
-    box-shadow: 0 0 15px #00FF00;
+    background-color: var(--neon-green);
+    color: var(--black);
+    box-shadow: 0 0 15px var(--neon-green);
     transform: scale(1.05);
 }
 
 /*
-  ==============================================
-  Estilos para as Formas de Fundo (Imagens)
-  ==============================================
+==============================================
+Estilos para as Formas de Fundo (Imagens Decorativas)
+==============================================
 */
 .say-shape {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%; /* Ocupa 100% da altura do container pai */
-    z-index: 0; /* Manda as formas para a camada de baixo */
+    height: 100%;
+    z-index: 0;
     overflow: hidden;
 }
 
@@ -137,9 +158,11 @@ h1, h2, h3, h4, h5, h6 {
     left: 0;
     top: 50%;
     transform: translateY(-50%);
-    height: 100%; /* Aumenta a altura para ocupar toda a seção */
+    height: 100%;
     width: auto;
     filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
+    opacity: 0.3; /* Adiciona uma leve transparência para não roubar a atenção */
+    display: none; /* Esconde em telas menores */
 }
 
 .say-shape .say-shape2 {
@@ -147,14 +170,23 @@ h1, h2, h3, h4, h5, h6 {
     right: 0;
     top: 50%;
     transform: translateY(-50%);
-    width: 400px;
+    width: clamp(200px, 30vw, 400px); /* Largura responsiva */
     animation: moveLeft 3s infinite alternate ease-in-out;
+    opacity: 0.5; /* Leve transparência */
+    display: none; /* Esconde em telas menores */
+}
+
+@media (min-width: 769px) {
+    .say-shape .say-shape1,
+    .say-shape .say-shape2 {
+        display: block; /* Mostra em telas maiores */
+    }
 }
 
 /*
-  ==============================================
-  Animação para a forma da direita (aviãozinho)
-  ==============================================
+==============================================
+Animação para a forma da direita (aviãozinho)
+==============================================
 */
 @keyframes moveLeft {
     0% { transform: translateY(-50%) translateX(0); }
@@ -162,59 +194,129 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* ==============================================
-  Estilos para o vídeo (centralização e responsividade)
-  ==============================================
+Estilos para o vídeo (centralização e responsividade)
+==============================================
 */
 .video-container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    position: relative;
     width: 100%;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    padding-bottom: 56.25%; /* Proporção 16:9 para vídeos */
+    height: 0;
+    overflow: hidden;
+    margin: 2rem auto; /* Centraliza e adiciona margem */
+    max-width: 900px; /* Limita a largura máxima do vídeo */
+    border: 5px solid var(--neon-green); /* Borda do vídeo */
+    box-shadow: 0 0 20px rgba(0,255,0,0.5); /* Sombra neon */
+    border-radius: 8px; /* Borda levemente arredondada */
+    cursor: pointer; /* Indica que é clicável */
+    transition: box-shadow 0.3s ease;
 }
 
-video {
-    display: block;
-    max-width: 100%;
-    height: auto;
-    border: 10px solid #00FF00;
+.video-container:hover {
+    box-shadow: 0 0 30px rgba(0,255,0,0.8);
 }
 
-.best-features-area .container {
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.video-thumbnail {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Garante que a imagem preencha o container */
+    z-index: 1;
+    cursor: pointer;
+}
+
+.video-embed iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: none;
+    z-index: 2;
 }
 
 /* ==============================================
-  Estilos para os cards de depoimento (com as cores preto e verde neon)
-  ==============================================
+Estilos para a imagem principal do herói (capa do curso)
+==============================================
+*/
+.hero__img {
+    display: flex;
+    justify-content: center; /* Centraliza a imagem na coluna */
+    align-items: center;
+    padding: 1rem; /* Adiciona padding para espaçamento */
+}
+
+.hero-main-img {
+    max-width: 100%;
+    height: auto;
+    display: block; /* Remove espaço extra abaixo da imagem */
+    border-radius: 8px; /* Borda arredondada */
+    box-shadow: 0 0 25px rgba(0,255,0,0.5); /* Sombra neon */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.hero-main-img:hover {
+    transform: scale(1.02); /* Leve aumento no hover */
+    box-shadow: 0 0 40px rgba(0,255,0,0.8);
+}
+
+
+/* ==============================================
+Estilos para os cards de depoimento
+==============================================
 */
 .our-customer .single-customer {
-    background-color: #1a1a1a;
-    color: #00FF00;
-    border: 1px solid #00FF00;
-    padding: 55px 34px 55px 44px;
-    box-shadow: 0px 0px 9px 0px rgba(0,255,0,0.2);
+    background-color: var(--dark-gray);
+    color: var(--neon-green);
+    border: 1px solid var(--neon-green);
+    padding: 30px; /* Padding ajustado para ser mais consistente */
+    box-shadow: 0px 0px 9px 0px var(--shadow-neon-green);
     border-radius: 10px;
-    margin: 0 15px;
+    margin: 0 10px; /* Margem lateral ajustada */
+    text-align: center; /* Centraliza o texto dentro do card */
+    display: flex; /* Para alinhar imagem e texto */
+    flex-direction: column; /* Coloca elementos em coluna */
+    align-items: center; /* Centraliza itens horizontalmente */
+    min-height: 280px; /* Altura mínima para uniformizar cards */
+    justify-content: space-between; /* Distribui o espaço entre os elementos */
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.our-customer .single-customer:hover {
+    transform: translateY(-5px); /* Efeito de elevação no hover */
+    box-shadow: 0px 0px 15px 0px var(--neon-green);
+}
+
+.our-customer .single-customer .what-img {
+    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+}
+
+.testimonial-img {
+    width: 90px; /* Largura padrão */
+    height: 90px; /* Altura padrão */
+    border-radius: 50%; /* Torna a imagem redonda */
+    object-fit: cover; /* Garante que a imagem preencha o círculo */
+    border: 3px solid var(--neon-green); /* Borda neon na imagem */
+    box-shadow: 0 0 10px rgba(0,255,0,0.4);
 }
 
 .our-customer .single-customer .what-cap h4 a {
-    color: #00FF00;
-    font-size: 20px;
-    margin-bottom: 20px;
+    color: var(--neon-green);
+    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Tamanho responsivo */
+    margin-bottom: 10px;
     text-decoration: none;
+    display: block; /* Garante que o link ocupe toda a largura */
 }
 
 .our-customer .single-customer .what-cap h4 a:hover {
-    color: #33FF33;
+    color: var(--dark-green);
 }
 
 .our-customer .single-customer .what-cap p {
-    color: #99FF99;
-    font-size: 16px;
+    color: var(--dark-green);
+    font-size: clamp(0.9rem, 2vw, 1rem); /* Tamanho responsivo */
     line-height: 1.8;
 }
 
@@ -222,86 +324,113 @@ video {
     background: none;
     border: none;
     position: absolute;
-    bottom: -87px;
+    bottom: -60px; /* Ajuste a posição para baixo */
     text-align: center;
-    font-size: 46px;
+    font-size: 40px; /* Tamanho do ícone ajustado */
     cursor: pointer;
-    color: #00FF00;
+    color: var(--neon-green);
     transition: .4s;
     z-index: 10;
+    opacity: 0.7;
 }
 
 .our-customer .slick-prev.slick-arrow {
-    left: -172px;
-    transform: rotate(180deg);
+    left: 20px; /* Posição ajustada */
+    transform: translateY(-50%) rotate(180deg);
 }
 
 .our-customer .slick-next.slick-arrow {
-    right: -85px;
+    right: 20px; /* Posição ajustada */
     transform: translateY(-50%);
 }
 
 .our-customer .slick-arrow:hover {
-    color: #33FF33;
+    color: var(--dark-green);
+    opacity: 1;
 }
 
 .our-customer .slick-dots {
     text-align: center;
-    margin-top: 50px;
+    margin-top: 40px;
     list-style: none;
     padding: 0;
 }
 
 .our-customer .slick-dots li {
     display: inline-block;
-    margin: 0 5px;
+    margin: 0 6px; /* Espaçamento entre os pontos */
 }
 
 .our-customer .slick-dots li button {
     font-size: 0;
     line-height: 0;
     display: block;
-    width: 12px;
-    height: 12px;
-    padding: 5px;
+    width: 14px; /* Tamanho do ponto */
+    height: 14px; /* Tamanho do ponto */
+    padding: 0; /* Remove padding */
     cursor: pointer;
     color: transparent;
-    border: 0;
+    border: 2px solid var(--neon-green); /* Borda neon */
     outline: none;
-    background: #333333;
+    background: transparent; /* Fundo transparente */
     border-radius: 50%;
-    transition: background-color 0.3s ease;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 }
 
 .our-customer .slick-dots li.slick-active button {
-    background: #00FF00;
+    background: var(--neon-green);
+    border-color: var(--neon-green);
 }
 
+
 /* ==============================================
-  Estilos de responsividade para tags e seções
-  ==============================================
+Estilos de responsividade (Media Queries)
+==============================================
 */
 
-@media (max-width: 768px) {
-    .hero__caption {
-        text-align: center;
-    }
-
-    video {
-        width: 100%;
-        max-height: 400px;
-    }
-
-    .single-features {
-        text-align: center;
-        margin-bottom: 20px;
-    }
-
+/* Smartphones e telas pequenas */
+@media (max-width: 767.98px) {
     .section-padd4,
     .section-padd-top30,
     .pt-90,
     .pb-90 {
-        padding: 40px 0;
+        padding: 60px 0; /* Menor padding para telas pequenas */
+    }
+
+    .hero__caption h1 {
+        font-size: clamp(1.8rem, 8vw, 2.5rem);
+    }
+
+    .say-something-aera h2 {
+        font-size: clamp(1.5rem, 7vw, 2rem);
+    }
+
+    .hero__img {
+        margin-top: 30px; /* Espaçamento entre texto e imagem no mobile */
+    }
+
+    .hero-main-img {
+        max-width: 80%; /* Ajuste da largura da imagem principal */
+    }
+
+    .single-customer {
+        margin: 0 5px; /* Menor margem entre os cards no mobile */
+        min-height: 250px; /* Altura mínima para mobile */
+    }
+
+    .our-customer .slick-arrow {
+        bottom: -50px; /* Posição das setas no mobile */
+        font-size: 30px;
+    }
+
+    .our-customer .slick-prev.slick-arrow {
+        left: 5px;
+        transform: translateY(-50%) rotate(180deg);
+    }
+
+    .our-customer .slick-next.slick-arrow {
+        right: 5px;
+        transform: translateY(-50%);
     }
 
     .footer-area {
@@ -316,53 +445,68 @@ video {
     .footer-copy-right {
         text-align: center;
     }
+}
+
+/* Tablets e telas médias */
+@media (min-width: 768px) and (max-width: 991.98px) {
+    .section-padd4,
+    .section-padd-top30,
+    .pt-90,
+    .pb-90 {
+        padding: 80px 0;
+    }
+
+    .hero__caption {
+        padding: 2rem;
+    }
+
+    .hero-main-img {
+        max-width: 90%;
+    }
 
     .our-customer .slick-arrow {
-        bottom: -60px;
-        font-size: 30px;
+        bottom: -70px;
+        font-size: 35px;
     }
+
     .our-customer .slick-prev.slick-arrow {
-        left: 0;
-        transform: rotate(180deg) translateX(-50%);
+        left: 10px;
     }
     .our-customer .slick-next.slick-arrow {
-        right: 0;
-        transform: translateX(50%);
-    }
-    .our-customer .slick-dots {
-        margin-top: 30px;
-    }
-
-    .say-something-aera h2 {
-        font-size: 1.8rem;
+        right: 10px;
     }
 }
 
-@media (min-width: 769px) and (max-width: 1024px) {
+/* Desktops e telas maiores */
+@media (min-width: 992px) {
+    .section-padd4,
+    .section-padd-top30,
+    .pt-90,
+    .pb-90 {
+        padding: 100px 0;
+    }
+
     .hero__caption {
-        text-align: center;
+        text-align: left; /* Alinha o texto à esquerda em telas maiores */
+        padding-right: 2rem;
     }
 
-    video {
-        width: 80%;
+    .hero__img {
+        justify-content: flex-end; /* Alinha a imagem à direita em telas maiores */
     }
 }
 
-.hero__img img {
-    max-width: 100%;
-    height: auto;
-}
 
-/*
-  ==============================================
-  Estilos para o Rodapé (Footer)
-  ==============================================
+/* ==============================================
+Estilos para o Rodapé (Footer)
+==============================================
 */
 .footer-main {
-    background-color: #000000;
-    color: #00FF00;
-    border-top: 1px solid #00FF00;
+    background-color: var(--black);
+    color: var(--neon-green);
+    border-top: 1px solid var(--neon-green);
     padding-top: 50px;
+    padding-bottom: 20px;
 }
 
 .footer-main .footer-copy-right {
@@ -373,15 +517,21 @@ video {
 
 .footer-main .footer-copy-right p {
     margin: 0;
-    color: #99FF99;
+    color: var(--dark-green);
+    font-size: 0.9rem;
 }
 
 .footer-main .footer-copy-right p a {
-    color: #00FF00;
+    color: var(--neon-green);
     text-decoration: none;
     transition: color 0.3s ease;
 }
 
 .footer-main .footer-copy-right p a:hover {
-    color: #33FF33;
+    color: var(--dark-green);
+}
+
+/* Ajustes para o copyright */
+.footer-copy-right {
+    margin-top: 40px; /* Espaçamento do conteúdo acima */
 }
