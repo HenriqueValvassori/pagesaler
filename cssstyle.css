@@ -131,7 +131,7 @@ Estilos para o vídeo e imagens
 */
 .video-container {
     position: relative;
-    width: 100%;
+    width: 95%;
     padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
