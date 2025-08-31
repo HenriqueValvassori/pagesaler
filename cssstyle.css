@@ -1,214 +1,146 @@
 /*
 ==============================================
 Estilos CSS para a página "Curso Revolução Digital"
-- Otimização e Responsividade
+- Otimizado para Performance e Conversão
 - Baseado no tema "Matrix" (preto e verde neon)
 ==============================================
 */
 
 /* Variáveis CSS para cores - Clean Code */
 :root {
-    --neon-green: #00FF00;
-    --dark-green: #33FF33;
-    --black: #000000;
-    --dark-gray: #1a1a1a;
-    --red-alert: #ff0000;
-    --shadow-light: rgba(255, 255, 255, 0.7);
-    --shadow-neon-green: rgba(0, 255, 0, 0.2);
+   --neon-green: #00FF00;
+--dark-green: #33FF33;
+ --black: #000000;
+--dark-gray: #1a1a1a;
+--red-alert: #ff0000;
 }
 
 /* Estilos gerais da página */
-body {
+html, body {
+    /* Adicionando height: 100% para garantir que o fundo ocupe toda a tela */
+    height: 100%;
+    margin: 0;
+    padding: 0;
     background-color: var(--black);
     color: var(--neon-green);
     font-family: 'Arial', sans-serif;
     line-height: 1.6;
-    margin: 0; /* Remove margem padrão do body */
-    padding: 0; /* Remove padding padrão do body */
-    overflow-x: hidden; /* Evita rolagem horizontal indesejada */
+    overflow-x: hidden;
 }
 
 /* ==============================================
-Estilos para textos e títulos
+Estilos para textos e títulos - Otimizado
 ==============================================
 */
 
-h1, h2, h3, h4, h5, h6 {
-    color: var(--neon-green);
-    text-align: center;
-    margin-bottom: 1rem; /* Espaçamento padrão para títulos */
-}
-
+/* Reduzindo a complexidade do text-shadow */
 #red {
     color: var(--red-alert);
     font-weight: 900;
-    font-size: clamp(1.5rem, 4vw, 3rem); /* Tamanho responsivo da fonte */
+    font-size: clamp(1.5rem, 4vw, 3rem);
     font-style: oblique;
-    font-family: 'Arial', sans-serif;
-    text-shadow:
-        0 0 7px var(--shadow-light),
-        0 0 10px var(--shadow-light),
-        0 0 21px var(--shadow-light),
-        0 0 42px var(--shadow-light),
-        0 0 82px var(--shadow-light),
-        0 0 92px var(--shadow-light),
-        0 0 102px var(--shadow-light),
-        0 0 151px var(--shadow-light);
-    white-space: normal; /* Permite que o texto quebre linhas */
-    word-break: break-word; /* Garante que palavras longas quebrem */
+    /* Simplificado para um efeito mais leve e performático */
+    text-shadow: 0 0 10px rgba(255, 0, 0, 0.7), 0 0 20px rgba(255, 0, 0, 0.5);
+    word-break: break-word;
+}
+
+h1, h2, h3, h4, h5, h6 {
+color: var(--neon-green);
+text-align: center;
+ margin-bottom: 1rem;
 }
 
 .hero__caption {
     text-align: center;
-    padding: 2rem 1rem; /* Padding para espaçamento interno */
+    padding: 2rem 1rem;
 }
 
 .hero__caption p {
-    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Tamanho responsivo do parágrafo */
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
 }
 
 /* ==============================================
-Estilos para botões e links
+Estilos para botões e links - Unificado e Otimizado
 ==============================================
 */
-
 .btn, .radius-btn {
-    background-color: rgba(255, 0, 0, 0.8); /* Cor mais transparente */
+    background-color: var(--red-alert); /* Usando a cor de alerta para consistência */
     color: var(--neon-green);
     border: 1px solid var(--neon-green);
-    padding: 12px 25px; /* Ajuste no padding */
+    padding: 12px 25px;
     border-radius: 5px;
     text-decoration: none;
-    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
-    display: inline-block; /* Garante que o padding e a margem funcionem */
+    transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease, box-shadow 0.3s ease; /* Adicionado box-shadow para transição */
+    display: inline-block;
     margin-top: 20px;
     font-weight: bold;
     text-transform: uppercase;
     letter-spacing: 1px;
+    box-shadow: 0 0 5px rgba(255, 0, 0, 0.5); /* Sombra padrão */
 }
 
 .btn:hover, .radius-btn:hover {
     background-color: var(--neon-green);
     color: var(--black);
     border-color: var(--dark-green);
-    box-shadow: 0 0 10px var(--neon-green); /* Adiciona um brilho no hover */
+    box-shadow: 0 0 20px var(--neon-green); /* Sombra mais intensa no hover */
 }
 
 /* ==============================================
-Estilos para a Seção "Fale Conosco"
+Seção "Fale Conosco" - Otimizada
 ==============================================
 */
 .say-something-aera {
     background-color: var(--black);
     position: relative;
-    z-index: 1;
-    overflow: hidden;
-    padding: 100px 0; /* Padding responsivo */
+    padding: 100px 0;
     text-align: center;
-}
-
-.say-something-aera .container {
-    position: relative;
-    z-index: 2;
 }
 
 .say-something-aera h2 {
     color: var(--neon-green);
-    font-size: clamp(2rem, 5vw, 3rem); /* Tamanho responsivo da fonte */
+    font-size: clamp(2rem, 5vw, 3rem);
     line-height: 1.2;
     margin-bottom: 30px;
 }
 
 .say-btn .btn {
-    background-color: rgba(255, 0, 0, 0.16); /* Ajustado para mais transparência */
+    background-color: var(--black); /* Fundo preto para destaque do neon */
+    border-color: var(--neon-green);
     color: var(--neon-green);
-    border: 2px solid var(--neon-green);
-    text-transform: uppercase;
-    font-weight: bold;
     padding: 15px 30px;
     border-radius: 5px;
     transition: all 0.3s ease-in-out;
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.5); /* Efeito neon padrão */
 }
 
-.say-btn .btn:hover,
-.say-btn .btn:focus {
+.say-btn .btn:hover {
     background-color: var(--neon-green);
     color: var(--black);
-    box-shadow: 0 0 15px var(--neon-green);
     transform: scale(1.05);
+    box-shadow: 0 0 20px var(--neon-green); /* Efeito neon mais forte no hover */
 }
 
-/*
-==============================================
-Estilos para as Formas de Fundo (Imagens Decorativas)
-==============================================
-*/
 .say-shape {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    z-index: 0;
-    overflow: hidden;
-}
-
-.say-shape .say-shape1 {
-    position: absolute;
-    left: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    height: 100%;
-    width: auto;
-    filter: brightness(0) saturate(100%) invert(48%) sepia(79%) saturate(2476%) hue-rotate(86deg) brightness(118%) contrast(119%);
-    opacity: 0.3; /* Adiciona uma leve transparência para não roubar a atenção */
-    display: none; /* Esconde em telas menores */
-}
-
-.say-shape .say-shape2 {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-    width: clamp(200px, 30vw, 400px); /* Largura responsiva */
-    animation: moveLeft 3s infinite alternate ease-in-out;
-    opacity: 0.5; /* Leve transparência */
-    display: none; /* Esconde em telas menores */
-}
-
-@media (min-width: 769px) {
-    .say-shape .say-shape1,
-    .say-shape .say-shape2 {
-        display: block; /* Mostra em telas maiores */
-    }
-}
-
-/*
-==============================================
-Animação para a forma da direita (aviãozinho)
-==============================================
-*/
-@keyframes moveLeft {
-    0% { transform: translateY(-50%) translateX(0); }
-    100% { transform: translateY(-50%) translateX(-20px); }
+    display: none; /* Mantém as imagens de fundo ocultas por padrão */
 }
 
 /* ==============================================
-Estilos para o vídeo (centralização e responsividade)
+Estilos para o vídeo e imagens
 ==============================================
 */
 .video-container {
     position: relative;
     width: 100%;
-    padding-bottom: 56.25%; /* Proporção 16:9 para vídeos */
+    padding-bottom: 56.25%;
     height: 0;
     overflow: hidden;
-    margin: 2rem auto; /* Centraliza e adiciona margem */
-    max-width: 900px; /* Limita a largura máxima do vídeo */
-    border: 5px solid var(--neon-green); /* Borda do vídeo */
-    box-shadow: 0 0 20px rgba(0,255,0,0.5); /* Sombra neon */
-    border-radius: 8px; /* Borda levemente arredondada */
-    cursor: pointer; /* Indica que é clicável */
+    margin: 2rem auto;
+    max-width: 900px;
+    border: 5px solid var(--neon-green);
+    box-shadow: 0 0 20px rgba(0,255,0,0.5);
+    border-radius: 8px;
+    cursor: pointer;
     transition: box-shadow 0.3s ease;
 }
 
@@ -216,52 +148,37 @@ Estilos para o vídeo (centralização e responsividade)
     box-shadow: 0 0 30px rgba(0,255,0,0.8);
 }
 
-.video-thumbnail {
+.video-thumbnail, .video-embed iframe {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    object-fit: cover; /* Garante que a imagem preencha o container */
+}
+
+.video-thumbnail {
+    object-fit: cover;
     z-index: 1;
-    cursor: pointer;
 }
 
 .video-embed iframe {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
     border: none;
     z-index: 2;
-}
-
-/* ==============================================
-Estilos para a imagem principal do herói (capa do curso)
-==============================================
-*/
-.hero__img {
-    display: flex;
-    justify-content: center; /* Centraliza a imagem na coluna */
-    align-items: center;
-    padding: 1rem; /* Adiciona padding para espaçamento */
 }
 
 .hero-main-img {
     max-width: 100%;
     height: auto;
-    display: block; /* Remove espaço extra abaixo da imagem */
-    border-radius: 8px; /* Borda arredondada */
-    box-shadow: 0 0 25px rgba(0,255,0,0.5); /* Sombra neon */
+    display: block;
+    border-radius: 8px;
+    box-shadow: 0 0 25px rgba(0,255,0,0.5);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .hero-main-img:hover {
-    transform: scale(1.02); /* Leve aumento no hover */
+    transform: scale(1.02);
     box-shadow: 0 0 40px rgba(0,255,0,0.8);
 }
-
 
 /* ==============================================
 Estilos para os cards de depoimento
@@ -271,77 +188,52 @@ Estilos para os cards de depoimento
     background-color: var(--dark-gray);
     color: var(--neon-green);
     border: 1px solid var(--neon-green);
-    padding: 30px; /* Padding ajustado para ser mais consistente */
-    box-shadow: 0px 0px 9px 0px var(--shadow-neon-green);
+    padding: 30px;
+    box-shadow: 0 0 9px var(--dark-green); /* Sombra otimizada */
     border-radius: 10px;
-    margin: 0 10px; /* Margem lateral ajustada */
-    text-align: center; /* Centraliza o texto dentro do card */
-    display: flex; /* Para alinhar imagem e texto */
-    flex-direction: column; /* Coloca elementos em coluna */
-    align-items: center; /* Centraliza itens horizontalmente */
-    min-height: 280px; /* Altura mínima para uniformizar cards */
-    justify-content: space-between; /* Distribui o espaço entre os elementos */
+    margin: 0 10px;
+    text-align: center;
+    min-height: 280px;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .our-customer .single-customer:hover {
-    transform: translateY(-5px); /* Efeito de elevação no hover */
-    box-shadow: 0px 0px 15px 0px var(--neon-green);
+    transform: translateY(-5px);
+    box-shadow: 0 0 15px var(--neon-green);
 }
 
-.our-customer .single-customer .what-img {
-    margin-bottom: 15px; /* Espaçamento abaixo da imagem */
+.what-img {
+    margin-bottom: 15px;
 }
 
 .testimonial-img {
-    width: 90px; /* Largura padrão */
-    height: 90px; /* Altura padrão */
-    border-radius: 50%; /* Torna a imagem redonda */
-    object-fit: cover; /* Garante que a imagem preencha o círculo */
-    border: 3px solid var(--neon-green); /* Borda neon na imagem */
+    width: 90px;
+    height: 90px;
+    border-radius: 50%;
+    object-fit: cover;
+    border: 3px solid var(--neon-green);
     box-shadow: 0 0 10px rgba(0,255,0,0.4);
 }
 
-.our-customer .single-customer .what-cap h4 a {
+.what-cap h4 a {
     color: var(--neon-green);
-    font-size: clamp(1rem, 2.5vw, 1.25rem); /* Tamanho responsivo */
-    margin-bottom: 10px;
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
     text-decoration: none;
-    display: block; /* Garante que o link ocupe toda a largura */
+    margin-bottom: 10px;
 }
 
-.our-customer .single-customer .what-cap h4 a:hover {
+.what-cap p {
     color: var(--dark-green);
-}
-
-.our-customer .single-customer .what-cap p {
-    color: var(--dark-green);
-    font-size: clamp(0.9rem, 2vw, 1rem); /* Tamanho responsivo */
+    font-size: clamp(0.9rem, 2vw, 1rem);
     line-height: 1.8;
 }
 
+/* Estilos do Slick Carousel - Agrupados para melhor leitura */
 .our-customer .slick-arrow {
-    background: none;
-    border: none;
-    position: absolute;
-    bottom: -60px; /* Ajuste a posição para baixo */
-    text-align: center;
-    font-size: 40px; /* Tamanho do ícone ajustado */
-    cursor: pointer;
+    font-size: 40px;
     color: var(--neon-green);
     transition: .4s;
-    z-index: 10;
     opacity: 0.7;
-}
-
-.our-customer .slick-prev.slick-arrow {
-    left: 20px; /* Posição ajustada */
-    transform: translateY(-50%) rotate(180deg);
-}
-
-.our-customer .slick-next.slick-arrow {
-    right: 20px; /* Posição ajustada */
-    transform: translateY(-50%);
 }
 
 .our-customer .slick-arrow:hover {
@@ -349,189 +241,25 @@ Estilos para os cards de depoimento
     opacity: 1;
 }
 
-.our-customer .slick-dots {
-    text-align: center;
-    margin-top: 40px;
-    list-style: none;
-    padding: 0;
-}
-
-.our-customer .slick-dots li {
-    display: inline-block;
-    margin: 0 6px; /* Espaçamento entre os pontos */
-}
-
 .our-customer .slick-dots li button {
-    font-size: 0;
-    line-height: 0;
-    display: block;
-    width: 14px; /* Tamanho do ponto */
-    height: 14px; /* Tamanho do ponto */
-    padding: 0; /* Remove padding */
-    cursor: pointer;
-    color: transparent;
-    border: 2px solid var(--neon-green); /* Borda neon */
-    outline: none;
-    background: transparent; /* Fundo transparente */
+    width: 14px;
+    height: 14px;
+    border: 2px solid var(--neon-green);
+    background: transparent;
     border-radius: 50%;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
+    transition: background-color 0.3s ease;
 }
 
 .our-customer .slick-dots li.slick-active button {
     background: var(--neon-green);
-    border-color: var(--neon-green);
 }
-
 
 /* ==============================================
-Estilos de responsividade (Media Queries)
+Responsividade
 ==============================================
 */
-
-/* Smartphones e telas pequenas */
-@media (max-width: 767.98px) {
-    .section-padd4,
-    .section-padd-top30,
-    .pt-90,
-    .pb-90 {
-        padding: 60px 0; /* Menor padding para telas pequenas */
-    }
-
-    .hero__caption h1 {
-        font-size: clamp(1.8rem, 8vw, 2.5rem);
-    }
-
-    .say-something-aera h2 {
-        font-size: clamp(1.5rem, 7vw, 2rem);
-    }
-
-    .hero__img {
-        margin-top: 30px; /* Espaçamento entre texto e imagem no mobile */
-    }
-
-    .hero-main-img {
-        max-width: 80%; /* Ajuste da largura da imagem principal */
-    }
-
-    .single-customer {
-        margin: 0 5px; /* Menor margem entre os cards no mobile */
-        min-height: 250px; /* Altura mínima para mobile */
-    }
-
-    .our-customer .slick-arrow {
-        bottom: -50px; /* Posição das setas no mobile */
-        font-size: 30px;
-    }
-
-    .our-customer .slick-prev.slick-arrow {
-        left: 5px;
-        transform: translateY(-50%) rotate(180deg);
-    }
-
-    .our-customer .slick-next.slick-arrow {
-        right: 5px;
-        transform: translateY(-50%);
-    }
-
-    .footer-area {
-        text-align: center;
-    }
-
-    .single-footer-caption,
-    .single-customer {
-        margin-bottom: 30px;
-    }
-
-    .footer-copy-right {
-        text-align: center;
-    }
-}
-
-/* Tablets e telas médias */
-@media (min-width: 768px) and (max-width: 991.98px) {
-    .section-padd4,
-    .section-padd-top30,
-    .pt-90,
-    .pb-90 {
-        padding: 80px 0;
-    }
-
-    .hero__caption {
-        padding: 2rem;
-    }
-
-    .hero-main-img {
-        max-width: 90%;
-    }
-
-    .our-customer .slick-arrow {
-        bottom: -70px;
-        font-size: 35px;
-    }
-
-    .our-customer .slick-prev.slick-arrow {
-        left: 10px;
-    }
-    .our-customer .slick-next.slick-arrow {
-        right: 10px;
-    }
-}
-
-/* Desktops e telas maiores */
 @media (min-width: 992px) {
-    .section-padd4,
-    .section-padd-top30,
-    .pt-90,
-    .pb-90 {
-        padding: 100px 0;
-    }
-
     .hero__caption {
-        text-align: left; /* Alinha o texto à esquerda em telas maiores */
-        padding-right: 2rem;
+        text-align: left;
     }
-
-    .hero__img {
-        justify-content: flex-end; /* Alinha a imagem à direita em telas maiores */
-    }
-}
-
-
-/* ==============================================
-Estilos para o Rodapé (Footer)
-==============================================
-*/
-.footer-main {
-    background-color: var(--black);
-    color: var(--neon-green);
-    border-top: 1px solid var(--neon-green);
-    padding-top: 50px;
-    padding-bottom: 20px;
-}
-
-.footer-main .footer-copy-right {
-    padding-top: 20px;
-    padding-bottom: 20px;
-    text-align: center;
-}
-
-.footer-main .footer-copy-right p {
-    margin: 0;
-    color: var(--dark-green);
-    font-size: 0.9rem;
-}
-
-.footer-main .footer-copy-right p a {
-    color: var(--neon-green);
-    text-decoration: none;
-    transition: color 0.3s ease;
-}
-
-.footer-main .footer-copy-right p a:hover {
-    color: var(--dark-green);
-}
-
-/* Ajustes para o copyright */
-.footer-copy-right {
-    margin-top: 40px; /* Espaçamento do conteúdo acima */
 }
